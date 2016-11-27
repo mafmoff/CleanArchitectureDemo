@@ -9,8 +9,7 @@
 import Foundation
 import ObjectMapper
 
-/// Entry Entity
-struct EntryEntity: Mappable {
+struct EntryEntity: Responsible {
     
     /// title
     var title = ""

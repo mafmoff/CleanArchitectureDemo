@@ -14,12 +14,13 @@ protocol Requestable {
     
     var request: DataRequest? { get set }
     
-    func request(parameter: Parameterizable)
+//    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<T>
+//    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<[T]>
 }
 
 extension Requestable {
     
-    func request<T: Responsible>(parameter: Parameterizable) -> Observable<T> {
+    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<T> {
         
         return Observable.create { (observer: AnyObserver<T>) in
         
@@ -28,13 +29,12 @@ extension Requestable {
                 switch response.result {
                 case .success(let value):
                     
-                    if
-                    let json = value as? [String: Any],
-                        let mapper = Mapper<T>().map(JSON: json) {
+                    if let mapper = Mapper<T>().map(JSONObject: value) {
                         observer.onNext(mapper)
                         observer.onCompleted()
                     }
                 case .failure(let error):
+                    
                     observer.onError(error)
                 }
             }
@@ -44,4 +44,31 @@ extension Requestable {
             }
         }
     }
+
+    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<[T]> {
+        
+        return Observable.create { (observer: AnyObserver<[T]>) in
+            
+            self.request?.responseJSON { response in
+                
+                switch response.result {
+                    
+                case .success(let value):
+                    
+                    if let mapper = Mapper<T>().mapArray(JSONObject: value) {
+                        observer.onNext(mapper)
+                        observer.onCompleted()
+                    }
+                case .failure(let error):
+                    
+                    observer.onError(error)
+                }
+            }
+            
+            return Disposables.create() {
+                
+            }
+        }
+    }
+
 }

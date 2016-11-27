@@ -14,16 +14,20 @@ protocol TimelineDataStore {
     func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]>
 }
 
-struct TimelineDataStoreImplementation: TimelineDataStore {
+struct TimelineDataStoreImplementation: TimelineDataStore, Requestable {
     
-    let request = Alamofire.request(<#T##url: URLConvertible##URLConvertible#>,
-                                    method: <#T##HTTPMethod#>,
-                                    parameters: <#T##Parameters?#>,
-                                    encoding: <#T##ParameterEncoding#>,
-                                    headers: <#T##HTTPHeaders?#>)
+    var request: DataRequest?
     
+    let path = NSURL(string: "")
+
     func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]> {
-        
-        return
+    
+//        request = Alamofire.request(path,
+//                                         method: .get,
+//                                         parameters: parameter.toJSON(),
+//                                         encoding: .url,
+//                                         headers: nil)
+
+        return connect(parameter: parameter)
     }
 }
