@@ -14,7 +14,7 @@ protocol DetailWireframe: class {
     func pop()
 }
 
-class DetailWireframeImplementation: DetailWireframe {
+class DetailWireframeImpl: DetailWireframe {
     
     var viewController: DetailViewController?
     

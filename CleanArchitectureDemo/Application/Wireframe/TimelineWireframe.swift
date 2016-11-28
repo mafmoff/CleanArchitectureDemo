@@ -15,7 +15,7 @@ protocol TimelineWireframe: class {
     func showDetail()
 }
 
-class HomeTimelineWireframeImplementation: TimelineWireframe {
+class HomeTimelineWireframeImpl: TimelineWireframe {
     
     var viewController: TimelineViewController?
     
@@ -28,7 +28,7 @@ class HomeTimelineWireframeImplementation: TimelineWireframe {
     }
 }
 
-class FeatureTimelineWireframeImplementation: TimelineWireframe {
+class FeatureTimelineWireframeImpl: TimelineWireframe {
     
     var viewController: TimelineViewController?
     

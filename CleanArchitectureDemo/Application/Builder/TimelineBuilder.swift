@@ -13,7 +13,7 @@ struct HomeTimelineBuilder {
     
     func build() -> UIViewController? {
         
-        let wireframe = HomeTimelineWireframeImplementation()
+        let wireframe = HomeTimelineWireframeImpl()
         let viewController = UIStoryboard(name: "mail", bundle: nil)
             .instantiateViewController(withIdentifier: "Timeline") as? TimelineViewController
         

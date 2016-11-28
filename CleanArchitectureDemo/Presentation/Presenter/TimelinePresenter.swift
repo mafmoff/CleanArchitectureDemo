@@ -14,7 +14,7 @@ protocol TimelinePresenter {
 //    func selectCell()
 }
 
-class HomeTimelinePresenterImplement: TimelinePresenter {
+class HomeTimelinePresenterImpl: TimelinePresenter {
     
     let wireframe: TimelineWireframe
     var useCase: TimelineUseCase

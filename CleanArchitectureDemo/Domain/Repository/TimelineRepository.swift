@@ -15,7 +15,7 @@ protocol TimelineRepository {
     mutating func requestTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]>
 }
 
-struct TimelineRepositoryImplementation: TimelineRepository {
+struct TimelineRepositoryImpl: TimelineRepository {
     
     private var dataStore: TimelineDataStore
 

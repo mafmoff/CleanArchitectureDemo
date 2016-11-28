@@ -14,7 +14,7 @@ protocol TimelineUseCase {
     mutating func loadTimeline(parameter: Parameterizable) -> Observable<TimelineModel>
 }
 
-struct TimelineUseCaseImplementation: TimelineUseCase {
+struct TimelineUseCaseImpl: TimelineUseCase {
     private var timelineRepository: TimelineRepository
 
     init(timelineRepository: TimelineRepository) {
