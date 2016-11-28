@@ -10,7 +10,7 @@ import Foundation
 
 struct TimelineModel {
     
-    var list = [TimelineModel]()
+    var list = [EntryModel]()
 }
 
 struct EntryModel: TimelineViewModel {
@@ -19,7 +19,8 @@ struct EntryModel: TimelineViewModel {
     let title: String
     let link: NSURL
     var publishedDate: Date
-    
+    let test = "test"
+
     init(entity: EntryEntity) {
         title = entity.title
         link = entity.link

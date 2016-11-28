@@ -11,10 +11,19 @@ import RxSwift
 /// Interface
 protocol TimelineUseCase {
     
-//    func loadTimeline() -> Observable<TimelineModel>
+    mutating func loadTimeline(parameter: Parameterizable) -> Observable<TimelineModel>
 }
 
 struct TimelineUseCaseImplementation: TimelineUseCase {
-    private let timelineRepository: TimelineRepository
-    
+    private var timelineRepository: TimelineRepository
+
+    init(timelineRepository: TimelineRepository) {
+
+        self.timelineRepository = timelineRepository
+    }
+
+    mutating func loadTimeline(parameter: Parameterizable) -> Observable<TimelineModel> {
+
+        return timelineRepository.requestTimeline(parameter: parameter).map(translator: TimelineTranslator())
+    }
 }
