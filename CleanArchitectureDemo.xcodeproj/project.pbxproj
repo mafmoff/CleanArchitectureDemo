@@ -30,6 +30,7 @@
 		B587A8241DEB0D860003E93D /* Parameterizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587A8231DEB0D860003E93D /* Parameterizable.swift */; };
 		B587A8261DEB0E9D0003E93D /* Responsible.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587A8251DEB0E9D0003E93D /* Responsible.swift */; };
 		B587A8281DEB181F0003E93D /* TimelineDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587A8271DEB181F0003E93D /* TimelineDataStore.swift */; };
+		B587A82C1DEC61770003E93D /* TimelinePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B587A82B1DEC61770003E93D /* TimelinePresenter.swift */; };
 		B5DC5C841DEAB3670022DD1D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DC5C831DEAB3670022DD1D /* AppDelegate.swift */; };
 		B5DC5C991DEAB3670022DD1D /* CleanArchitectureDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DC5C981DEAB3670022DD1D /* CleanArchitectureDemoTests.swift */; };
 		B5DC5CA41DEAB3670022DD1D /* CleanArchitectureDemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DC5CA31DEAB3670022DD1D /* CleanArchitectureDemoUITests.swift */; };
@@ -77,6 +78,7 @@
 		B587A8231DEB0D860003E93D /* Parameterizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Parameterizable.swift; sourceTree = "<group>"; };
 		B587A8251DEB0E9D0003E93D /* Responsible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Responsible.swift; sourceTree = "<group>"; };
 		B587A8271DEB181F0003E93D /* TimelineDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelineDataStore.swift; sourceTree = "<group>"; };
+		B587A82B1DEC61770003E93D /* TimelinePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimelinePresenter.swift; sourceTree = "<group>"; };
 		B5DC5C801DEAB3670022DD1D /* CleanArchitectureDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CleanArchitectureDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5DC5C831DEAB3670022DD1D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5DC5C8F1DEAB3670022DD1D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 		B50B8A271DEABF19005D86D6 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				B587A82B1DEC61770003E93D /* TimelinePresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -676,6 +679,7 @@
 				B587A81C1DEAD7610003E93D /* TimelineViewModel.swift in Sources */,
 				B587A80A1DEACC060003E93D /* DetailViewController.swift in Sources */,
 				B50B8A391DEABF19005D86D6 /* TimelineViewController.swift in Sources */,
+				B587A82C1DEC61770003E93D /* TimelinePresenter.swift in Sources */,
 				B5DC5C841DEAB3670022DD1D /* AppDelegate.swift in Sources */,
 				B587A8261DEB0E9D0003E93D /* Responsible.swift in Sources */,
 				B587A8221DEB0B710003E93D /* Requestable.swift in Sources */,

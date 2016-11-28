@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol TimelineInput {
+    
+}
+
 class TimelineViewController: UIViewController {
 
     override func viewDidLoad() {
