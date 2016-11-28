@@ -10,16 +10,22 @@ import Foundation
 import RxSwift
 
 protocol TimelineRepository {
-    
-//    func requestTimeline() -> Observable<[EntryEntity]>
+
+    // FIXME: 後でパラメータを厳格に指定する
+    mutating func requestTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]>
 }
 
 struct TimelineRepositoryImplementation: TimelineRepository {
     
-//    private let dataStore: TimelineDataSrore
-    
-//    func requestTimeline() -> Observable<[EntryEntity]> {
-//        
-//        return
-//    }
+    private var dataStore: TimelineDataStore
+
+    init(dataStore: TimelineDataStore) {
+
+        self.dataStore = dataStore
+    }
+
+    mutating func requestTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]> {
+        
+        return dataStore.getTimeline(parameter: parameter)
+    }
 }
