@@ -11,23 +11,22 @@ import Alamofire
 
 protocol TimelineDataStore {
     
-    func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]>
+    mutating func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]>
 }
 
 struct TimelineDataStoreImplementation: TimelineDataStore, Requestable {
     
     var request: DataRequest?
     
-    let path = NSURL(string: "")
+    let urlString = ""
 
-    func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]> {
-    
-//        request = Alamofire.request(path,
-//                                         method: .get,
-//                                         parameters: parameter.toJSON(),
-//                                         encoding: .url,
-//                                         headers: nil)
+    mutating func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]> {
 
-        return connect(parameter: parameter)
+        request = Alamofire.request(urlString,
+                                    method: .get,
+                                    parameters: parameter.toJSON(),
+                                    encoding: JSONEncoding.default,
+                                    headers: [:])
+        return connect()
     }
 }

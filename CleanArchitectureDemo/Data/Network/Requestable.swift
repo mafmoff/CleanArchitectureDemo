@@ -14,13 +14,13 @@ protocol Requestable {
     
     var request: DataRequest? { get set }
     
-//    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<T>
-//    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<[T]>
+    func connect<T: Responsible>() -> Observable<T>
+    func connect<T: Responsible>() -> Observable<[T]>
 }
 
 extension Requestable {
     
-    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<T> {
+    func connect<T: Responsible>() -> Observable<T> {
         
         return Observable.create { (observer: AnyObserver<T>) in
         
@@ -45,7 +45,7 @@ extension Requestable {
         }
     }
 
-    func connect<T: Responsible>(parameter: Parameterizable) -> Observable<[T]> {
+    func connect<T: Responsible>() -> Observable<[T]> {
         
         return Observable.create { (observer: AnyObserver<[T]>) in
             
