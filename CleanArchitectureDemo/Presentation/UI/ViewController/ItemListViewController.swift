@@ -1,5 +1,5 @@
 //
-//  TimelineViewController.swift
+//  ItemListViewController.swift
 //  CleanArchitectureDemo
 //
 //  Created by SaikaYamamoto on 2016/11/27.
@@ -8,11 +8,11 @@
 
 import UIKit
 
-protocol TimelineInput {
+protocol ItemListInput {
     
 }
 
-class TimelineViewController: UIViewController {
+class ItemListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

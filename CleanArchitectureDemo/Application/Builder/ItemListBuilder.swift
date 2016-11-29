@@ -1,5 +1,5 @@
 //
-//  TimelineBuilder.swift
+//  ItemListBuilder.swift
 //  CleanArchitectureDemo
 //
 //  Created by SaikaYamamoto on 2016/11/27.
@@ -8,14 +8,14 @@
 
 import UIKit
 
-/// HomeTimeline Builder
-struct HomeTimelineBuilder {
+/// HomeItemList Builder
+struct HomeItemListBuilder {
     
     func build() -> UIViewController? {
         
-        let wireframe = HomeTimelineWireframeImpl()
+        let wireframe = HomeItemListWireframeImpl()
         let viewController = UIStoryboard(name: "mail", bundle: nil)
-            .instantiateViewController(withIdentifier: "Timeline") as? TimelineViewController
+            .instantiateViewController(withIdentifier: "ItemList") as? ItemListViewController
         
         
         return viewController

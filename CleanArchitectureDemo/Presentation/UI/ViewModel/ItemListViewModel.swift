@@ -1,5 +1,5 @@
 //
-//  TimelineViewModel.swift
+//  ItemListViewModel.swift
 //  CleanArchitectureDemo
 //
 //  Created by SaikaYamamoto on 2016/11/27.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol TimelineViewModel {
+protocol ItemListViewModel {
     
     var title: String { get }
     

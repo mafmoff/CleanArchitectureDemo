@@ -1,5 +1,5 @@
 //
-//  TimelineDataStore.swift
+//  ItemListDataStore.swift
 //  CleanArchitectureDemo
 //
 //  Created by SaikaYamamoto on 2016/11/27.
@@ -9,18 +9,18 @@
 import RxSwift
 import Alamofire
 
-protocol TimelineDataStore {
+protocol ItemListDataStore {
     
-    mutating func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]>
+    mutating func getItemList(parameter: Parameterizable) -> Observable<[EntryEntity]>
 }
 
-struct TimelineDataStoreImpl: TimelineDataStore, Requestable {
+struct ItemListDataStoreImpl: ItemListDataStore, Requestable {
     
     var request: DataRequest?
     
     let urlString = ""
 
-    mutating func getTimeline(parameter: Parameterizable) -> Observable<[EntryEntity]> {
+    mutating func getItemList(parameter: Parameterizable) -> Observable<[EntryEntity]> {
 
         request = Alamofire.request(urlString,
                                     method: .get,

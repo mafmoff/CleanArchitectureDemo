@@ -1,5 +1,5 @@
 //
-//  TimelineTranslater.swift
+//  ItemListTranslater.swift
 //  CleanArchitectureDemo
 //
 //  Created by Saika Yamamoto [NEXT] on 2016/11/28.
@@ -8,14 +8,14 @@
 
 import Foundation
 
-struct TimelineTranslator: Translator {
+struct ItemListTranslator: Translator {
 
     typealias Input = [EntryEntity]
-    typealias Output = TimelineModel
+    typealias Output = ItemListModel
 
-    func translate(_ entries: [EntryEntity]) throws -> TimelineModel {
+    func translate(_ entries: [EntryEntity]) throws -> ItemListModel {
 
-        var model = TimelineModel()
+        var model = ItemListModel()
         model.list = entries.map { EntryModel.init(entity: $0) }
         return model
     }

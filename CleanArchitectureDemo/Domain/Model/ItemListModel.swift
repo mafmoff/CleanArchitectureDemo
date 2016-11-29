@@ -1,5 +1,5 @@
 //
-//  TimelineModel.swift
+//  ItemListModel.swift
 //  CleanArchitectureDemo
 //
 //  Created by SaikaYamamoto on 2016/11/27.
@@ -8,12 +8,12 @@
 
 import Foundation
 
-struct TimelineModel {
+struct ItemListModel {
     
     var list = [EntryModel]()
 }
 
-struct EntryModel: TimelineViewModel {
+struct EntryModel: ItemListViewModel {
 
     // FIXME: 一旦適当
     let title: String
