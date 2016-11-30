@@ -11,9 +11,9 @@ import RxSwift
 /// Interface
 protocol ItemListUseCase {
     
-    mutating func loadItemList() -> Observable<ItemListModel>
-    func setCondition()
-    func fetchCondition() -> Parameterizable
+//    mutating func loadItemList() -> Observable<ItemListModel>
+//    func setCondition()
+//    func fetchCondition() -> Parameterizable
 }
 
 struct ItemListUseCaseImpl: ItemListUseCase {
@@ -25,21 +25,21 @@ struct ItemListUseCaseImpl: ItemListUseCase {
         self.itemListRepository = itemListRepository
     }
 
-    mutating func loadItemList() -> Observable<ItemListModel> {
-
-        return itemListRepository.requestItemList(parameter: fetchCondition())
-            .map(translator: ItemListTranslator())
-    }
-
-    func setCondition() {
-
-        // 検索条件を保存
-    }
-
-    func fetchCondition() -> Parameterizable {
-
-        // 検索条件を取得
-        return
-    }
+//    mutating func loadItemList() -> Observable<ItemListModel> {
+//
+//        return itemListRepository.requestItemList(parameter: fetchCondition())
+//            .map(translator: ItemListTranslator())
+//    }
+//
+//    func setCondition() {
+//
+//        // 検索条件を保存
+//    }
+//
+//    func fetchCondition() -> Parameterizable {
+//
+//        // 検索条件を取得
+//        return
+//    }
 
 }

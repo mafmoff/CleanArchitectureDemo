@@ -8,15 +8,23 @@
 
 import UIKit
 
-protocol ItemListInput {
+protocol ItemListViewInput: class {
     
 }
 
 class ItemListViewController: UIViewController {
 
+    var presenter: ItemListPresenter?
+
+    func inject(presenter: ItemListPresenter) {
+
+        self.presenter = presenter
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        presenter?.loadItemList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,3 +35,6 @@ class ItemListViewController: UIViewController {
 
 }
 
+extension ItemListViewController: ItemListViewInput {
+    
+}

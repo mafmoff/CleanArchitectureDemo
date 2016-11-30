@@ -18,9 +18,9 @@ class HomeItemListPresenterImpl: ItemListPresenter {
     
     let wireframe: ItemListWireframe
     var useCase: ItemListUseCase
-    var viewInput: ItemListInput?
+    var viewInput: ItemListViewInput?
     
-    init(wireframe: ItemListWireframe, useCase: ItemListUseCase, viewInput: ItemListInput) {
+    init(wireframe: ItemListWireframe, useCase: ItemListUseCase, viewInput: ItemListViewInput) {
         
         self.wireframe = wireframe
         self.useCase = useCase
